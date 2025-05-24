@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multilingual Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 1em 0;
+    }
+
+    .language-selector {
+      margin: 20px 0;
+    }
+
+    .language-selector button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+
+    .language-selector button:hover {
+      background-color: #45a049;
+    }
+
+    .content {
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="title">Welcome</h1>
+  </header>
+
+  <div class="language-selector">
+    <button onclick="changeLanguage('en')">English</button>
+    <button onclick="changeLanguage('es')">Español</button>
+    <button onclick="changeLanguage('fr')">Français</button>
+    <button onclick="changeLanguage('de')">Deutsch</button>
+  </div>
+
+  <div class="content">
+    <p id="description">This is a simple multilingual website. Select a language to change the content.</p>
+  </div>
+
+  <script>
+    const translations = {
+      en: {
+        title: "Welcome",
+        description: "This is a simple multilingual website. Select a language to change the content."
+      },
+      es: {
+        title: "Bienvenido",
+        description: "Este es un sitio web multilingüe simple. Seleccione un idioma para cambiar el contenido."
+      },
+      fr: {
+        title: "Bienvenue",
+        description: "Ceci est un site Web multilingue simple. Sélectionnez une langue pour changer le contenu."
+      },
+      de: {
+        title: "Willkommen",
+        description: "Dies ist eine einfache mehrsprachige Website. Wählen Sie eine Sprache, um den Inhalt zu ändern."
+      }
+    };
+
+    function changeLanguage(language) {
+      document.getElementById('title').innerText = translations[language].title;
+      document.getElementById('description').innerText = translations[language].description;
+    }
+  </script>
+</body>
+</html>
